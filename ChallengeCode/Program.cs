@@ -10,6 +10,6 @@ int score = sln.BagOfTokenScore(tokens, 200);
 
 Console.WriteLine(score);
 
-bool str = sln.isValid("([]){}");
+bool str = sln.isValid(")");
 
 Console.WriteLine(str);

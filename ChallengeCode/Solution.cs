@@ -76,21 +76,21 @@ namespace ChallengeCode
                 }
                 else if (str[i] == ')')
                 {
-                    if (stack.Pop() != '(')
+                    if (stack.Count==0 || stack.Pop() != '(')
                     {
                         return false;
                     }
                 }
                 else if (str[i] == ']')
                 {
-                    if (stack.Pop() != '[')
+                    if (stack.Count == 0 || stack.Pop() != '[')
                     {
                         return false;
                     }
                 }
                 else if (str[i] == '}')
                 {
-                    if (stack.Pop() != '{')
+                    if (stack.Count == 0 || stack.Pop() != '{')
                     {
                         return false;
                     }
@@ -101,6 +101,10 @@ namespace ChallengeCode
                 }
             }
 
+            if(stack.Count > 0)
+            {
+                return false;
+            }
             return true;
         }
 
